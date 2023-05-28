@@ -1,0 +1,15 @@
+import { axiosInstance } from "../../api/api";
+
+export const fetchUserCall = async (account) => axiosInstance.get(`/account/getAccountByEmail?email=${account}`) 
+export const fetchVisitCall = async (account) => axiosInstance.get(`/account/getAccountByUsername?username=${account}`) 
+export const fetchNewsCall = async (lst) => axiosInstance.post(`/news/postNews?username=${lst[0]}&news=${lst[1]}`)
+export const getRestaurantsCall = async () => axiosInstance.get(`/restaurant/getRestaurants`)
+export const getFavoritesCall = async (username) => axiosInstance.get(`/restaurant/getFavorites?username=${username}`)
+export const getRestaurantsOfUserCall = async (username) => axiosInstance.get(`/restaurant/getRestaurantsOfUser?username=${username}`)
+export const getRestaurantMenuCall = async (restaurant) => axiosInstance.get(`/food/getRestaurantMenu?restaurant=${restaurant}`)
+export const getRestaurantStatusCall = async (lst) => axiosInstance.get(`/restaurant/getRestaurantStatus?username=${lst[0]}&restaurant=${lst[1]}`)
+export const sortRestaurantsCall = async (lst) => axiosInstance.get(`/restaurant/sortRestaurants?name=${lst[0]}&type=${lst[1]}&location=${lst[2]}`)
+export const addToFavoritesCall = async (lst) => axiosInstance.post(`/restaurant/addToFavorites?username=${lst[0]}&restaurant=${lst[1]}`)
+export const addFoodToMenuCall = async (lst) => axiosInstance.post(`/food/addNewFoodToRestaurant?name=${lst[0]}&origin=${lst[1]}&price=${lst[2]}&calories=${lst[3]}&ingredient1=${lst[4]}&ingredient2=${lst[5]}&ingredient3=${lst[6]}&restaurant=${lst[7]}`)
+export const deleteFoodCall = async (lst) => axiosInstance.post(`/food/deleteFoodFromMenu?id=${lst[0]}&restaurant=${lst[1]}`)
+export const addToCartCall = async (lst) => axiosInstance.post(`/food/addFoodToBasket?id=${lst[0]}&restaurant=${lst[1]}&email=${lst[2]}`)
