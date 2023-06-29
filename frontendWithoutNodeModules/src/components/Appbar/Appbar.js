@@ -278,7 +278,7 @@ const Appbar = () => {
           <Box sx={{ flexGrow: 0.6 }} />
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'serif' }}>
-            Alight.EE Food Delivery
+            Food Delivery
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" color="inherit" onClick={() => goToPage(paths.NEWRESTAURANT)}>
